@@ -1,0 +1,14 @@
+# Base de datos local
+db.sqlite3
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales (por las dudas)
+venv/
+env/
+
+# Variables de entorno (si llegás a usar un .env para contraseñas)
+.env``
