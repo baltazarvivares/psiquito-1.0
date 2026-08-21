@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar sesión · Psiquito</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+  <div class="card">
+    <div class="brand">Psiquito</div>
+    <div class="subtitle">Iniciá sesión para continuar</div>
+
+    <form method="post" action="{% url 'turnos:login' %}">
+      {% csrf_token %}
+      <div class="field">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+
+      {% if form.errors %}
+      <div class="error" style="display:block;">Usuario o contraseña incorrectos.</div>
+      {% endif %}
+
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <hr class="divider">
+    <a href="{% url 'turnos:registro' %}">Registrate</a>
+  </div>
+</body>
+</html>
