@@ -4,6 +4,6 @@ from . import views
 app_name = 'turnos'
 
 urlpatterns = [
-    path('login/', views.Login, name='login'),
-    path('registro/', views.Registro, name='registro'),
+     path('', views.Login, name='login'),
+     path('register/', views.Register, name='registro'),
 ]

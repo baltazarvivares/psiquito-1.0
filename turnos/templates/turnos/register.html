@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crear cuenta · Psiquito</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+  <div class="card">
+    <div class="brand">Psiquito</div>
+    <div class="subtitle">Creá tu cuenta para empezar</div>
+
+    <form method="post" action="{% url 'register' %}">
+      {% csrf_token %}
+      <div class="field">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="password1">Contraseña</label>
+        <input type="password" id="password1" name="password1" autocomplete="new-password" required>
+      </div>
+      <div class="field">
+        <label for="password2">Confirmar contraseña</label>
+        <input type="password" id="password2" name="password2" autocomplete="new-password" required>
+      </div>
+
+      {% if form.errors %}
+      <div class="error" style="display:block;">Revisá los datos ingresados.</div>
+      {% endif %}
+
+      <button type="submit">Crear cuenta</button>
+    </form>
+
+    <hr class="divider">
+    <div class="foot">¿Ya tenés cuenta? <a href="{% url 'login' %}">Iniciá sesión</a></div>
+  </div>
+</body>
+</html>
