@@ -12,7 +12,7 @@
     <div class="brand">Psiquito</div>
     <div class="subtitle">Creá tu cuenta para empezar</div>
 
-    <form method="post" action="{% url 'register' %}">
+    <form method="post" action="{% url 'turnos:register' %}">
       {% csrf_token %}
       <div class="field">
         <label for="username">Usuario</label>
@@ -39,7 +39,7 @@
     </form>
 
     <hr class="divider">
-    <div class="foot">¿Ya tenés cuenta? <a href="{% url 'login' %}">Iniciá sesión</a></div>
+    <div class="foot">¿Ya tenés cuenta? <a href="{% url 'turnos:login' %}">Iniciá sesión</a></div>
   </div>
 </body>
 </html>
